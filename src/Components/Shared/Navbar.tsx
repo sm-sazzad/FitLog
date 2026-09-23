@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import navlogo from '@/assets/logo.png'
-import NavLink, { PlanAndSave } from './NavLink/NavLink';
+import NavLink, { PlanAndSave } from '../NavLink/NavLink';
 import { HiMenuAlt1 } from 'react-icons/hi';
 
 const Navbar = () => {
