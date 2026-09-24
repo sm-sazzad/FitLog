@@ -23,7 +23,7 @@ const PlanAndSave = () => {
     return (
         <>
             <li><Link href={"/my-plan"}>Plan <span className='px-3 rounded-full inline-block text-black bg-[#c2f800]'>{todaysPlan.length}</span></Link></li>
-            <li><Link href={"/my-plan"}>Saved <span className='px-3 rounded-full inline-block text-white ring'>{savedPlan.length}</span></Link></li>
+            <li><Link href={"/my-plan"}>Saved <span className='px-3 rounded-full inline-block text-white border'>{savedPlan.length}</span></Link></li>
         </>
     )
 }

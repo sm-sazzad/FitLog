@@ -3,9 +3,25 @@ import { ExcerciseContext } from "@/Context/ExcerciseProvider";
 import { useContext, useState } from "react";
 import SelectedCard from "./SelectedCard";
 import Link from "next/link";
+import { IData } from "@/lib/Type";
 
 const MyPlanSection = () => {
-    const { todaysPlan, setTodaysPlan, savedPlan, setSavedPlan, btnType, setBtnType } = useContext(ExcerciseContext)
+    const { todaysPlan, savedPlan, btnType, setBtnType } = useContext(ExcerciseContext);
+    const [sortBy, setSortBy] = useState<'rating' | 'calorie' | 'time'>('time');
+
+    const Filter = (allData: IData[]) => {
+        let FilteredData = [...allData];
+        if (sortBy === "rating") {
+            FilteredData.sort((a, b) => b.rating - a.rating);
+        } else if (sortBy === "calorie") {
+            FilteredData.sort((a, b) => b.caloriesBurned - a.caloriesBurned);
+        } else if (sortBy === "time") {
+            FilteredData.sort((a, b) => b.duration - a.duration);
+        }
+        return FilteredData;
+    }
+
+
     return (
         <div>
             <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center">
@@ -17,8 +33,16 @@ const MyPlanSection = () => {
                             className={`${btnType === "saved" ? "py-2 px-5 rounded-2xl bg-[#1F242D] ring ring-[#2B303D] text-[#CCFF00]" : "py-2 px-5"}`}>Saved</div>
                     </div>
                 </div>
-                <div>
-                    Sort by
+                <div className="sm:flex items-center gap-2">
+                    <h1 className="font-semibold">Sort By</h1>
+                    <select defaultValue={"time"}
+                        onChange={(e) => setSortBy(e.target.value as 'rating' | 'calorie' | 'time')}
+                        className="bg-[#1F242D] text-white px-4 py-2 rounded-xl border border-[#2B303D] outline-none cursor-pointer hover:border-[#C2F800] focus:ring-1 focus:ring-[#C2F800] transition-colors"
+                    >
+                        <option value="rating">⭐ Rating</option>
+                        <option value="time">⏱ Duration</option>
+                        <option value="calorie">🔥 Calorie</option>
+                    </select>
                 </div>
             </div>
             <div className="my-10">
@@ -32,7 +56,7 @@ const MyPlanSection = () => {
                     ) : (
                         <div className="max-[903px]:grid max-[903px]:grid-cols-2 max-[903px]:gap-2 max-sm:grid-cols-1">
                             {
-                                todaysPlan.map(cardData => <SelectedCard key={cardData.id} cardData={cardData} btnType={btnType} />)
+                                Filter(todaysPlan).map(cardData => <SelectedCard key={cardData.id} cardData={cardData} btnType={btnType} />)
                             }
                         </div>
                     )) : (savedPlan.length === 0 ? (
@@ -43,7 +67,7 @@ const MyPlanSection = () => {
                         </div>
                     ) : (<div className="max-[903px]:grid max-[903px]:grid-cols-2 max-sm:gap-0 max-[903px]:gap-2 max-sm:grid-cols-1">
                         {
-                            savedPlan.map(cardData => <SelectedCard key={cardData.id} cardData={cardData} btnType={btnType} />)
+                            Filter(savedPlan).map(cardData => <SelectedCard key={cardData.id} cardData={cardData} btnType={btnType} />)
                         }
                     </div>
                     ))
