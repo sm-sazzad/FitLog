@@ -7,7 +7,7 @@ const Footer = () => {
             <div className='w-[90%] mx-auto flex justify-between'>
                 <div className='flex gap-2 items-center'>
                     <Image src={navlogo} alt='fitlog' className='-rotate-45'></Image>
-                    <h1 className='font-bold text-2xl'>FitLog</h1>
+                    <h1 className='font-oswald font-bold text-2xl'>FitLog</h1>
                 </div>
                 <p className='text-[#6B7280]'>© 2026 FitLog — Workout Library. Train hard, log honest.</p>
             </div>

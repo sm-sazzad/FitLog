@@ -11,7 +11,7 @@ const Navbar = () => {
                 <HiMenuAlt1 className='bolck sm:hidden text-2xl' />
                 <div className='flex items-center gap-2'>
                     <Image src={navlogo} alt='FitLog'></Image>
-                    <h1 className='font-extrabold text-2xl tracking-wider '>FITLOG</h1>
+                    <h1 className='font-extrabold text-2xl tracking-wider font-oswald'>FITLOG</h1>
                 </div>
                 <ul className='hidden sm:flex items-center space-x-3 font-semibold'>
                     {link}
