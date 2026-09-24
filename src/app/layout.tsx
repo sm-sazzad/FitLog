@@ -34,11 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme="dark"
       className={`${geistSans.variable} ${geistMono.variable}  ${oswald.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col ">
+      <body className="min-h-screen flex flex-col ">
         <ExcerciseProvider>
           <Navbar />
 
-          <div className={`bg-black ${oswald.variable}`}>
+          <div className={`bg-black flex-1 ${oswald.variable}`}>
             {children}
           </div>
           <Footer />

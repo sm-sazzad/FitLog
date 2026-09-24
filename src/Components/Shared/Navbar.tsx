@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import navlogo from '@/assets/logo.png'
-import NavLink, { PlanAndSave } from '../NavLink/NavLink';
+import NavLink, { Menu, PlanAndSave, Sidebar } from '../NavLink/NavLink';
 import { HiMenuAlt1 } from 'react-icons/hi';
 import Link from 'next/link';
 
 const Navbar = () => {
     const link = <NavLink />
-    return (
+    return (<>
         <div className='bg-black py-4 border-b border-stone-700 sticky top-0 z-50'>
             <nav className='w-[95%] sm:w-[80%] mx-auto flex justify-between items-center gap-1 cursor-pointer'>
-                <HiMenuAlt1 className='bolck sm:hidden text-2xl' />
+                <Menu />
                 <Link href={"/"}>
                     <div className='flex items-center gap-2'>
                         <Image src={navlogo} alt='FitLog'></Image>
@@ -24,7 +24,10 @@ const Navbar = () => {
                 </ul>
             </nav>
         </div>
-    );
+        <div>
+            <Sidebar />
+        </div>
+    </>);
 };
 
 export default Navbar;

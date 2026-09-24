@@ -3,6 +3,8 @@ import { ExcerciseContext } from '@/Context/ExcerciseProvider';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useContext } from 'react';
+import { HiMenuAlt1 } from 'react-icons/hi';
+import { RxCross2 } from 'react-icons/rx';
 
 const NavLink = () => {
     const PathName = usePathname();
@@ -27,5 +29,39 @@ const PlanAndSave = () => {
 }
 
 
+const Menu = () => {
+    const { isOpen, setIsOpen } = useContext(ExcerciseContext);
+
+    return <HiMenuAlt1 onClick={() => setIsOpen(true)}
+        className='bolck sm:hidden text-2xl' />
+}
+
+
+const Sidebar = () => {
+    const { isOpen, setIsOpen } = useContext(ExcerciseContext);
+    const PathName = usePathname();
+
+    const link = <NavLink />
+    return (
+        <div onClick={() => setIsOpen(false)}
+            className={`fixed inset-0 bg-black/50 z-100 transition-opacity duration-400 sm:hidden ${isOpen ? " opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none"}`}>
+            <ul onClick={(e) => e.stopPropagation()}
+                className={`absolute top-0 left-0 bottom-0 w-64 h-screen bg-white text-black py-5 transition-transform duration-400 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
+                <RxCross2 onClick={() => setIsOpen(false)}
+                    className='font-bold text-2xl justify-self-end mr-5 mb-5' />
+                <li
+                    className={`${PathName === "/" ? "text-[white] bg-stone-900 font-bold" : ""} duration-300 hover:scale-105 py-3 px-4 hover:bg-stone-400`}><Link href={"/"} className='block'>Workouts</Link></li>
+                <li
+                    className={`${PathName === "/my-plan" ? "text-[white] bg-stone-900 font-bold" : ""} duration-300 hover:scale-105 py-3 px-4 hover:bg-stone-400`}><Link href={"/my-plan"} className='block'>My Plan</Link></li>
+            </ul>
+        </div>
+    )
+
+}
+
+
+
 export default NavLink;
+export { Menu };
 export { PlanAndSave };
+export { Sidebar };
