@@ -48,11 +48,11 @@ const Sidebar = () => {
             <ul onClick={(e) => e.stopPropagation()}
                 className={`absolute top-0 left-0 bottom-0 w-64 h-screen bg-white text-black py-5 transition-transform duration-400 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
                 <RxCross2 onClick={() => setIsOpen(false)}
-                    className='font-bold text-2xl justify-self-end mr-5 mb-5' />
+                    className='font-bold text-2xl justify-self-end mr-5 mb-5 cursor-pointer' />
                 <li
-                    className={`${PathName === "/" ? "text-[white] bg-stone-900 font-bold" : ""} duration-300 hover:scale-105 py-3 px-4 hover:bg-stone-400`}><Link href={"/"} className='block'>Workouts</Link></li>
+                    className={`${PathName === "/" ? "text-[white] bg-stone-900 font-bold" : ""} duration-300 py-3 px-4 hover:bg-stone-400`}><Link href={"/"} onClick={() => setIsOpen(false)} className='block'>Workouts</Link></li>
                 <li
-                    className={`${PathName === "/my-plan" ? "text-[white] bg-stone-900 font-bold" : ""} duration-300 hover:scale-105 py-3 px-4 hover:bg-stone-400`}><Link href={"/my-plan"} className='block'>My Plan</Link></li>
+                    className={`${PathName === "/my-plan" ? "text-[white] bg-stone-900 font-bold" : ""} duration-300 py-3 px-4 hover:bg-stone-400`}><Link href={"/my-plan"} onClick={() => setIsOpen(false)} className='block'>My Plan</Link></li>
             </ul>
         </div>
     )

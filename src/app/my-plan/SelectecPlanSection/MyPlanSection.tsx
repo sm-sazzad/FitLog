@@ -36,8 +36,8 @@ const MyPlanSection = () => {
                             }
                         </div>
                     )) : (savedPlan.length === 0 ? (
-                        <div className="border-2 border-dashed border-stone-800 rounded-2xl text-center p-20 space-y-3">
-                            <h1 className="font-oswald text-4xl">NOTHING HERE YET</h1>
+                        <div className="border-2 border-dashed border-stone-800 rounded-2xl text-center p-10 sm:p-20 space-y-3">
+                            <h1 className="font-oswald text-3xl sm:text-4xl">NOTHING HERE YET</h1>
                             <p>Browse the library and add a lift to get today moving.</p>
                             <Link href={"/"}><button className="py-2 px-5 rounded-2xl text-black font-semibold cursor-pointer bg-[#CCFF00]">Go to workouts</button></Link>
                         </div>

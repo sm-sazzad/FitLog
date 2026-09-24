@@ -3,7 +3,7 @@ import MyPlanSection from './SelectecPlanSection/MyPlanSection';
 
 const page = () => {
     return (
-        <div className='w-[90%] sm:w-[80%] mx-auto'>
+        <div className='w-[90%] sm:w-[80%] mx-auto scroll-mt-20'>
             <div className='my-5 md:my-10 space-y-4'>
                 <h1 className='font-oswald text-4xl font-extrabold '>My Plan</h1>
                 <p className='text-[#8A92A0]'>Cap of five lifts for today. Finish them, then load more.</p>
