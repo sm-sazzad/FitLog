@@ -1,3 +1,4 @@
+import Excercises, { Calories, Minutes } from './Calculation';
 import MyPlanSection from './SelectecPlanSection/MyPlanSection';
 
 const page = () => {
@@ -10,17 +11,17 @@ const page = () => {
             <div className='bg-[#13161D] ring ring-[#232732] flex justify-evenly items-center py-3 px-5 rounded-2xl mb-10'>
                 <div className='text-center'>
                     <span className='text-[#8A92A0]'>Excercises</span>
-                    <h1 className='font-bold text-4xl text-[#CCFF00] '>156</h1>
+                    <Excercises />
                 </div>
                 <span className="divider divider-horizontal"></span>
                 <div className='text-center'>
                     <span className='text-[#8A92A0]'>Minutes</span>
-                    <h1 className='font-bold text-4xl'>156</h1>
+                    <Minutes />
                 </div>
                 <span className="divider divider-horizontal"></span>
                 <div className='text-center'>
                     <span className='text-[#8A92A0]'>Calories</span>
-                    <h1 className='font-bold text-4xl'>156</h1>
+                    <Calories />
                 </div>
             </div>
             <MyPlanSection />

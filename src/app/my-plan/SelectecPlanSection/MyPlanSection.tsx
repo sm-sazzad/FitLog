@@ -5,8 +5,7 @@ import SelectedCard from "./SelectedCard";
 import Link from "next/link";
 
 const MyPlanSection = () => {
-    const [btnType, setBtnType] = useState<'plan' | 'saved'>('plan')
-    const { todaysPlan, setTodaysPlan, savedPlan, setSavedPlan } = useContext(ExcerciseContext)
+    const { todaysPlan, setTodaysPlan, savedPlan, setSavedPlan, btnType, setBtnType } = useContext(ExcerciseContext)
     return (
         <div>
             <div className="flex justify-between">
