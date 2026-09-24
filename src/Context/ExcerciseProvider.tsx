@@ -10,7 +10,7 @@ interface ContextType {
     setSavedPlan: React.Dispatch<React.SetStateAction<IData[]>>
 }
 
-const ExcerciseContext = createContext<ContextType>({
+export const ExcerciseContext = createContext<ContextType>({
     todaysPlan: [],
     setTodaysPlan: () => { },
     savedPlan: [],
