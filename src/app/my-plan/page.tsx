@@ -1,4 +1,3 @@
-import React from 'react';
 import MyPlanSection from './SelectecPlanSection/MyPlanSection';
 
 const page = () => {

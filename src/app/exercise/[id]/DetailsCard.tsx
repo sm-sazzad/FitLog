@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import { BiCalendarPlus } from 'react-icons/bi';
 import { FiBookmark } from 'react-icons/fi';
+import DetailsPageBtn from './DetailsBtn/DetailsPageBtn';
 
 const DetailsCard = ({ exercise }: { exercise: IData }) => {
     return (
@@ -62,10 +63,7 @@ const DetailsCard = ({ exercise }: { exercise: IData }) => {
                         }
                     </ol>
                 </div>
-                <div className='flex gap-2 mt-2'>
-                    <button className='flex items-center gap-2 py-2 px-3 cursor-pointer bg-[#CCFF00] font-bold text-black rounded-xl'><BiCalendarPlus className='font-extrabold' />Add to today's plan</button>
-                    <button className='flex items-center gap-2 py-2 px-3 cursor-pointer ring ring-stone-700 font-bold text-white rounded-2xl'><FiBookmark />Save for later</button>
-                </div>
+                <DetailsPageBtn exercise={exercise} />
             </div>
         </div>
     );
