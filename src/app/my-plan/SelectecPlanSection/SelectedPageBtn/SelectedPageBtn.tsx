@@ -13,19 +13,26 @@ const SelectedPageBtn = ({ btnType, cardData }: { btnType: string, cardData: IDa
     const handleRemovePlan = () => {
         const remainingPlan = todaysPlan.filter(n => n.id !== cardData.id);
         setTodaysPlan(remainingPlan);
-        toast.info(`${cardData.name} removed`)
+        toast.info(`Removed from today's plan`)
     }
 
     const handleRemoveSaved = () => {
         const remainingSavedItem = savedPlan.filter(n => n.id !== cardData.id);
         setSavedPlan(remainingSavedItem);
-        toast.info(`${cardData.name} removed`)
+        toast.info(`Removed from saved`)
     }
+
+    const handleMarkBtn = () => {
+        const remainingPlan = todaysPlan.filter(n => n.id !== cardData.id);
+        setTodaysPlan(remainingPlan);
+        toast.success(`Workout logged — nice work`)
+    }
+
     return (
-        <div className='flex gap-3 items-center'>
+        <div className='flex gap-3 max-[903]:mt-3 items-center'>
             <Link href={`/exercise/${cardData.id}`}><button className='py-2 px-3 ring ring-white font-white rounded-full cursor-pointer'>View Details</button></Link>
             {
-                btnType !== "saved" ? (<button onClick={() => toast.success(`Mark as Done`)} className='flex gap-1 items-center py-2 px-3 bg-[#CCFF00] text-black font-bold rounded-full cursor-pointer'><IoCheckmarkSharp className='inline' />Mark as Done</button>
+                btnType !== "saved" ? (<button onClick={handleMarkBtn} className='flex gap-1 items-center py-2 px-3 bg-[#CCFF00] text-black font-bold rounded-full cursor-pointer'><IoCheckmarkSharp className='inline' />Mark as Done</button>
                 ) : ("")
             }
             <RxCross2 onClick={btnType === "plan" ? handleRemovePlan : handleRemoveSaved}

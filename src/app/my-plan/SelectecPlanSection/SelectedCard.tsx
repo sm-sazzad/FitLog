@@ -7,10 +7,10 @@ import SelectedPageBtn from './SelectedPageBtn/SelectedPageBtn';
 
 const SelectedCard = ({ cardData, btnType }: { cardData: IData, btnType: string }) => {
     return (
-        <div className='flex justify-between items-center gap-1 py-3 px-5 bg-[#14171E] my-5 rounded-2xl'>
-            <div className='flex items-center gap-4 '>
+        <div className='flex min-[905px]:flex-row flex-col  min-[905px]:justify-between  min-[905px]:items-center min-[905px]:gap-1 py-3 px-3 bg-[#14171E] my-2 min-[905px]:my-5 rounded-2xl'>
+            <div className='flex min-[905px]:flex-row flex-col min-[905px]:items-center gap-4 '>
                 <div>
-                    <Image className='h-20 w-30 object-cover rounded-2xl'
+                    <Image className='h-40 w-full min-[905px]:h-25  min-[905px]:w-35 object-cover rounded-2xl'
                         src={cardData.image} alt={cardData.name} height={200} width={550}></Image>
                 </div>
                 <div>

@@ -4,3 +4,7 @@
 .font-oswald {
     font-family: var(--font-oswald);
 }
+
+:root {
+    --sz: 300px;
+}

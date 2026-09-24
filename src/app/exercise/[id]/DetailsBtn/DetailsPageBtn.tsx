@@ -14,30 +14,30 @@ const DetailsPageBtn = ({ exercise }: { exercise: IData }) => {
 
     const handlePlanBtn = () => {
         if (isAddedPlan) {
-            toast.warning(`${exercise.name} already added`);
+            toast.warning(`Already in your plan`);
         }
         else {
             setTodaysPlan([...todaysPlan, exercise]);
-            toast.success(`${exercise.name} added suceesfully`);
+            toast.success(`Added to today's plan`);
         }
     }
 
     const handleSaveBtn = () => {
         if (isSaved) {
-            toast.warning(`${exercise.name} already saved`);
+            toast.warning(`Already in your save list`);
         }
         else {
             setSavedPlan([...savedPlan, exercise]);
-            toast.success(`${exercise.name} saved suceesfully`);
+            toast.success(`Saved for later`);
         }
     }
 
     return (
-        <div className='flex gap-2 mt-2'>
+        <div className='flex flex-col sm:flex-row gap-2 mt-5 lg:mt-2'>
             <button onClick={handlePlanBtn}
-                className={`${isAddedPlan ? "bg-[#d5f45b] ring-2 ring-white" : "bg-[#CCFF00]"} flex items-center gap-2 py-2 px-3 cursor-pointer font-bold text-black rounded-xl`}>{isAddedPlan ? (<BiCalendarCheck />) : (<BiCalendarPlus className='font-extrabold' />)} {isAddedPlan ? "Added to Today's Plan" : "Add to today's plan"}</button>
+                className={` ${isAddedPlan ? "bg-[#d5f45b] ring-2 ring-white" : "bg-[#CCFF00]"} flex items-center justify-center w-full sm:w-auto gap-2 py-2 px-3 cursor-pointer font-bold text-black rounded-xl`}>{isAddedPlan ? (<BiCalendarCheck />) : (<BiCalendarPlus className='font-extrabold' />)} {isAddedPlan ? "Added to Today's Plan" : "Add to today's plan"}</button>
             <button onClick={handleSaveBtn}
-                className={`${isSaved ? "ring-2" : "ring"} flex items-center gap-2 py-2 px-3 cursor-pointer ring-stone-700 font-bold text-white rounded-2xl`}>{isSaved ? (<MdOutlineBookmark className='text-white' />) : (<FiBookmark />)} {isSaved ? "Saved" : "Save for later"}</button>
+                className={`${isSaved ? "ring-2" : "ring"} flex items-center justify-center w-full sm:w-auto gap-2 py-2 px-3 cursor-pointer ring-stone-700 font-bold text-white rounded-2xl`}>{isSaved ? (<MdOutlineBookmark className='text-white' />) : (<FiBookmark />)} {isSaved ? "Saved" : "Save for later"}</button>
         </div>
     );
 };

@@ -1,21 +1,17 @@
 import { IData } from '@/lib/Type';
 import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { BiCalendarPlus } from 'react-icons/bi';
-import { FiBookmark } from 'react-icons/fi';
 import DetailsPageBtn from './DetailsBtn/DetailsPageBtn';
 
 const DetailsCard = ({ exercise }: { exercise: IData }) => {
     return (
-        <div className='flex gap-5 items-center'>
+        <div className='lg:flex gap-5 items-center'>
             <div>
-                <Image className='h-170 w-full object-cover rounded-xl'
+                <Image className='h-70 md:h-130 lg:h-170 w-full object-cover rounded-xl'
                     src={exercise.image} width={400} height={700} alt={exercise.name}></Image>
             </div>
             <div>
                 <div className='space-y-2 ' >
-                    <h1 className={`text-3xl font-extrabold font-oswald`}>{exercise.name}</h1>
+                    <h1 className={`text-3xl font-extrabold font-oswald mt-3 lg:mt-0`}>{exercise.name}</h1>
                     <p className='text-[#9CA3AF]'>{exercise.description}</p>
                     <ul className='flex gap-2'>
                         {
@@ -26,33 +22,33 @@ const DetailsCard = ({ exercise }: { exercise: IData }) => {
                     </ul>
                 </div>
                 <div className='bg-[#1E2330] ring ring-stone-700 rounded-2xl my-3'>
-                    <div className='flex justify-between py-3 border-b border-stone-700 px-4'>
+                    <div className='sm:flex justify-between py-3 border-b border-stone-700 px-4'>
                         <span className='text-[#9CA3AF] font-semibold'>EQUIPMENT</span>
-                        <span className='font-semibold'>{exercise.equipment}</span>
+                        <h1 className='font-semibold'>{exercise.equipment}</h1>
                     </div>
-                    <div className='flex justify-between py-3 border-b border-stone-700 px-4'>
+                    <div className='sm:flex justify-between py-3 border-b border-stone-700 px-4'>
                         <span className='text-[#9CA3AF] font-semibold'>DIFFICULTY</span>
-                        <span className='font-semibold'>{exercise.difficulty}</span>
+                        <h1 className='font-semibold'>{exercise.difficulty}</h1>
                     </div>
-                    <div className='flex justify-between py-3 border-b border-stone-700 px-4'>
+                    <div className='sm:flex justify-between py-3 border-b border-stone-700 px-4'>
                         <span className='text-[#9CA3AF] font-semibold'>SETS</span>
-                        <span className='font-semibold'>{exercise.sets}</span>
+                        <h1 className='font-semibold'>{exercise.sets}</h1>
                     </div>
-                    <div className='flex justify-between py-3 border-b border-stone-700 px-4'>
+                    <div className='sm:flex justify-between py-3 border-b border-stone-700 px-4'>
                         <span className='text-[#9CA3AF] font-semibold'>REPS</span>
-                        <span className='font-semibold'>{exercise.reps}</span>
+                        <h1 className='font-semibold'>{exercise.reps}</h1>
                     </div>
-                    <div className='flex justify-between py-3 border-b border-stone-700 px-4'>
+                    <div className='sm:flex justify-between py-3 border-b border-stone-700 px-4'>
                         <span className='text-[#9CA3AF] font-semibold'>DURATION</span>
-                        <span className='font-semibold'>{exercise.duration}</span>
+                        <h1 className='font-semibold'>{exercise.duration}</h1>
                     </div>
-                    <div className='flex justify-between py-3 border-b border-stone-700 px-4'>
+                    <div className='sm:flex justify-between py-3 border-b border-stone-700 px-4'>
                         <span className='text-[#9CA3AF] font-semibold'>CALORIES</span>
-                        <span className='font-semibold'>{exercise.caloriesBurned}</span>
+                        <h1 className='font-semibold'>{exercise.caloriesBurned}</h1>
                     </div>
-                    <div className='flex justify-between py-3 px-4'>
+                    <div className='sm:flex justify-between py-3 px-4'>
                         <span className='text-[#9CA3AF] font-semibold'>RATING</span>
-                        <span className='font-semibold'>{exercise.rating}</span>
+                        <h1 className='font-semibold'>{exercise.rating}</h1>
                     </div>
                 </div>
                 <div>

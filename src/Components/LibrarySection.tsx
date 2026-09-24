@@ -5,7 +5,7 @@ const LibrarySection = async () => {
     const workoutLibrary = await getData();
 
     return (
-        <div id="library" className='w-[80%] mx-auto scroll-mt-20'>
+        <div id="library" className='w-[90%] sm:w-[80%] mx-auto scroll-mt-20'>
             <div>
                 <h1 className='font-oswald text-[30px] font-extrabold '>THE LIBRARY</h1>
                 <p className='text-[#9CA3AF]'>Twelve lifts covering every major muscle group.</p>

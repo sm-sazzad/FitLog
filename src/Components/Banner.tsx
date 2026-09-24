@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Banner = () => {
     return (
-        <div className='w-[80%] mx-auto my-10 flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center bg-[#15171d] p-8 md:p-14 rounded-xl'>
+        <div className='w-[90%] sm:w-[80%] mx-auto my-10 flex flex-col md:flex-row gap-10 md:gap-0 justify-between items-center bg-[#15171d] p-8 md:p-14 rounded-xl'>
             <div className='w-full md:w-[60%] space-y-4'>
                 <span className='font-oswald text-[#C2F800]'>WORKOUT LIBRARY</span>
                 <h1 className='font-oswald text-[40px] md:text-[50px] font-bold leading-none'>TRAIN WITH INTENT. LOG EVERY SET.</h1>
