@@ -18,7 +18,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
     }
 
     return (
-        <div className='w-[90%] sm:w-[80%] mx-auto my-10'>
+        <div className='w-[90%] sm:w-[80%] mx-auto my-10 scroll-mt-20'>
             <DetailsCard exercise={exercise} />
         </div>
     );
